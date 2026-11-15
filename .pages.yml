@@ -105,3 +105,27 @@ content:
       - name: home_credit
         label: Photographer (credit)
         type: string
+
+  - name: biography
+    label: Biography
+    type: file
+    path: content/biography.yml
+    format: yaml
+    fields:
+      - name: photo
+        label: Top photo
+        type: image
+        options:
+          media: photos
+      - name: photo_credit
+        label: Photographer (credit)
+        type: string
+      - name: text_en
+        label: Biography (English)
+        type: text
+        required: true
+        description: Leave an empty line between paragraphs.
+      - name: text_ko
+        label: Biography (Korean)
+        type: text
+        description: Leave an empty line between paragraphs. If empty, the English text is shown.

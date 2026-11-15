@@ -65,6 +65,12 @@ def youtube_id(text):
     return m.group(1)
 
 
+def paragraphs(text):
+    """Split text into paragraphs at empty lines; single line breaks are joined with a space."""
+    blocks = re.split(r"\n\s*\n", str(text or "").strip())
+    return [" ".join(line.strip() for line in b.splitlines()) for b in blocks if b.strip()]
+
+
 def visible(items):
     return [x for x in items if x and not x.get("hidden")]
 
@@ -72,7 +78,7 @@ def visible(items):
 def main():
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=True)
     env.globals.update(url_for=url_for)
-    env.filters.update(asset=asset, concert_date=concert_date, iso=iso)
+    env.filters.update(asset=asset, concert_date=concert_date, iso=iso, paragraphs=paragraphs)
 
     settings = load("settings")
     today = dt.date.today().isoformat()
@@ -86,7 +92,7 @@ def main():
 
     context = {
         "home": dict(c=settings),
-        "biography": {},
+        "biography": dict(bio=load("biography")),
         "concerts": dict(concerts=concerts),
         "media": dict(videos=videos, photos=photos),
         "contact": {},

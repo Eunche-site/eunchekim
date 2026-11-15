@@ -3,27 +3,23 @@
 {% block desc %}Biography of violinist Eun Che Kim (김은채).{% endblock %}
 {% block main %}
 <main>
+  {% if bio.photo %}
   <div class="bio-banner">
-    <img src="{{ url_for('static', filename='images/bio-top.jpg') }}" alt="Eun Che Kim seated with her violin beside a stone column">
-    <span class="credit">&copy; Rira Kim</span>
+    <img src="{{ bio.photo | asset }}" alt="Eun Che Kim with her violin">
+    {% if bio.photo_credit %}<span class="credit">&copy; {{ bio.photo_credit }}</span>{% endif %}
   </div>
+  {% endif %}
   <div class="page">
     <h1 class="page-title">Biography</h1>
     <div class="bio-body i18n" lang="en">
-      <p>With her blend of technical precision, emotional playing, and rich musical experience, Eun Che is recognized as a captivating violinist and a rising talent on the international classical music stage.</p>
-      <p>In the course of her musical career to date, Eun Che has won numerous competitions with an international reputation. In 2014 she became the second prize winner (no first prize) in the “Ewha &amp; Kyung Hyang Concours”, won the first prize in 2015 at the “Segye Daily News Concours” and in 2016 she was awarded the second prize at the eighth Novosibirsk International Violin Competition as well as a special prize. In summer 2017, she won third prize at the 24th Johannes Brahms International Competition and in April 2022 she was awarded a third prize at the Carl Nielsen Competition in Odense. She was also awarded 1st prize in the ArsClassica International Competition for Violin and Piano in 2023 and won 1st prize at the Carl Flesch Competition in Mosonmagyaróvár with three special prizes in the same year. In 2021, she was awarded the Sternbrügger Prize, and in 2024, the Werner Stiefel Prize and the Brahms Prize at the Carl Flesch Academy. In 2026 she won 3rd prize at the George Enescu International Violin Competition, further solidifying her reputation as an exceptional musician.</p>
-      <p>As a soloist, she has performed with prestigious orchestras worldwide, such as the KBS Symphony Orchestra, Copenhagen Philharmonic, Baden-Baden Philharmonie, Seongnam Symphony Orchestra, Venusto Symphony Orchestra, Gwacheon Symphony Orchestra, The City of Lviv Symphony Orchestra, Odense Symphony Orchestra, Gangneung Symphony Orchestra, Savaria Symphony Orchestra, Hungarian State Opera Orchestra, George Enescu Philharmonic Orchestra, Hungarian Radio Orchestra, Anima Musica Chamber Orchestra and the Romanian Radio Chamber Orchestra.</p>
-      <p>Also a passionate chamber musician, Eun Che has collaborated with distinguished musicians at festivals and academies, including the Krzyżowa Music Festival, Gstaad Menuhin Festival &amp; Academy, Kammermusik Akademie Hohenstaufen, Chamber Music Academy Nitzow, and the Szent Gellért Festival. She is also a member of the Confringo Piano Quartet, winner of the Hans Gál Prize at the Deutscher Musikwettbewerb, where she continues to explore the depth of chamber music.</p>
-      <p>Her artistry has been influenced by masterclasses with renowned pedagogues and performers, including Boris Kuschnir, Gábor Takács-Nagy, Michaela Martin, Ana Chumachenko, Leonidas Kavakos, Kirill Troussov, Dora Schwarzberg, György Pauk, Barnabás Kelemen, and Vadim Gluzman.</p>
-      <p>Eun Che is currently studying at the Hochschule für Musik “Hanns Eisler” pursuing her Master’s degree under the guidance of Prof. Ulf Wallin. She completed her Bachelor degree with Prof. Kolja Blacher at the same institution. Eun Che plays on an Enrico Rocca violin, 1885.</p>
+      {% for p in bio.text_en | paragraphs %}
+      <p>{{ p }}</p>
+      {% endfor %}
     </div>
     <div class="bio-body i18n" lang="ko">
-      <p>섬세한 테크닉과 깊이 있는 음악성, 그리고 풍부한 연주 경험을 바탕으로, 바이올리니스트 김은채는 국제 클래식 음악계에서 주목받는 차세대 연주자로 자리매김하고 있다.</p>
-      <p>김은채는 국내외 유수의 국제 콩쿠르에서 뛰어난 성과를 거두며 실력을 인정받았다. 2014년 이화·경향콩쿠르에서 2위(1위 없는 2위)를 수상한 데 이어, 2015년 세계일보 음악콩쿠르에서 1위, 2016년 KBS 한전 음악콩쿠르에서 2위를 차지하였다. 2016년에는 제8회 노보시비르스크 국제 바이올린 콩쿠르에서 2위 및 특별상을 수상했으며, 2017년에는 제24회 요하네스 브람스 국제 콩쿠르에서 3위에 올랐다. 2022년에는 덴마크 오덴세에서 열린 칼 닐센 국제 콩쿠르에서 3위를 수상하였고, 2023년에는 ArsClassica 국제 바이올린·피아노 콩쿠르와 칼 플레쉬 국제 콩쿠르에서 각각 1위를 차지했으며, 칼 플레쉬 국제 콩쿠르에서는 세 개의 특별상을 함께 수상하였다. 또한 2021년 슈테른브뤼거상(Sternbrügger Prize), 2024년 칼 플레쉬 아카데미에서 베르너 슈티펠상(Werner Stiefel Prize)과 브람스상을 수상하였고 2026년 제오르제 에네스쿠 국제 콩쿠르에서 3위에 입상하며 뛰어난 음악성을 인정받았다.</p>
-      <p>솔리스트로서 성남시립교향악단, KBS교향악단, 코펜하겐 필하모닉, 과천시립교향악단, 바덴바덴 필하모니, 오덴세 심포니 오케스트라, 베누스토 오케스트라, 리비우 시립교향악단, 강릉시립교향악단, 사바리아 심포니 오케스트라, 헝가리 국립오페라 오케스트라, 헝가리 라디오 심포니 오케스트라, 제오르제 에네스쿠 필하모닉 오케스트라, 아니마 무지카 체임버 오케스트라, 루마니아 라디오 체임버 오케스트라와 협연하였다.</p>
-      <p>실내악에도 깊은 열정을 가지고 있는 김은채는 크시조바 뮤직 페스티벌(Krzyżowa Music Festival), 그슈타드 메뉴인 페스티벌 &amp; 아카데미, 호헨슈타우펜 실내악 아카데미, 니초프 체임버 뮤직 아카데미, 센트 겔레르트 페스티벌 등에서 세계적인 음악가들과 함께 연주해 왔다. 또한 독일 음악콩쿠르(Deutscher Musikwettbewerb)에서 한스 갈 상(Hans Gál Prize)을 수상한 콘프링고 피아노 콰르텟(Confringo Piano Quartet)의 멤버로 활동하며 폭넓은 실내악 레퍼토리를 선보이고 있다.</p>
-      <p>그녀는 보리스 쿠쉬니르(Boris Kuschnir), 가보르 터카치너지(Gábor Takács-Nagy), 미하엘라 마르틴(Michaela Martin), 안나 추마첸코(Ana Chumachenko), 레오니다스 카바코스(Leonidas Kavakos), 키릴 트루소프(Kirill Troussov), 도라 슈바르츠베르크(Dora Schwarzberg), 죄르지 파우크(György Pauk), 버르너바시 켈레멘(Barnabás Kelemen), 바딤 글루즈만(Vadim Gluzman) 등 세계적인 음악가들의 마스터클래스를 통해 음악적 깊이를 더욱 확장해 왔다.</p>
-      <p>현재 김은채는 독일 베를린 한스 아이슬러 국립음대(Hochschule für Musik “Hanns Eisler” Berlin)에서 울프 발린(Ulf Wallin) 교수 사사로 석사 과정을 밟고 있으며, 같은 대학에서 콜야 블라허(Kolja Blacher) 교수 사사로 학사 과정을 졸업하였다. 현재 1885년 제작된 엔리코 로카(Enrico Rocca) 바이올린을 연주하고 있다.</p>
+      {% for p in (bio.text_ko or bio.text_en) | paragraphs %}
+      <p>{{ p }}</p>
+      {% endfor %}
     </div>
   </div>
 </main>

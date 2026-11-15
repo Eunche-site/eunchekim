@@ -7,7 +7,7 @@ Static website hosted free on GitHub Pages, edited through [Pages CMS](https://a
 1. Go to **https://app.pagescms.org** and sign in with GitHub
    (or click the name **Eun Che Kim** in the footer of any page except Home).
 2. Open this repository.
-3. Edit **Schedule**, **Videos**, **Photos** or **Home page**, then **Save**.
+3. Edit **Schedule**, **Videos**, **Photos**, **Home page** or **Biography**, then **Save**.
 4. The website updates about 1–2 minutes later.
 
 - **Schedule:** order doesn't matter; the site sorts by date and hides past concerts by itself.
@@ -19,8 +19,8 @@ Static website hosted free on GitHub Pages, edited through [Pages CMS](https://a
 
 | Path | What |
 |---|---|
-| `content/*.yml` | Schedule, videos, photos, home photo (what Pages CMS edits) |
-| `templates/` | Page layouts — the Biography text is in `templates/biography.html` |
+| `content/*.yml` | Schedule, videos, photos, home photo, biography (what Pages CMS edits) |
+| `templates/` | Page layouts |
 | `static/` | CSS, JavaScript, photos (`static/uploads/` = photos added in the editor) |
 | `.pages.yml` | Editor configuration (which fields the editor shows) |
 | `build.py` | Turns templates + content into the finished site |
