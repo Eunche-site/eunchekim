@@ -1,0 +1,29 @@
+# Photos on the Media page, shown in this order.
+- image: /static/images/media-2.jpg
+  credit: Clara Evens
+  description: Portrait of Eun Che Kim with violin
+  hidden: false
+- image: /static/images/media-1.jpg
+  credit: Clara Evens
+  description: Portrait of Eun Che Kim holding her violin
+  hidden: false
+- image: /static/images/media-5.jpg
+  credit: Clara Evens
+  description: Eun Che Kim in profile holding her violin
+  hidden: false
+- image: /static/images/media-3.jpg
+  credit: Clara Evens
+  description: Eun Che Kim with violin against a pale wall
+  hidden: false
+- image: /static/images/media-6.jpg
+  credit: Rira Kim
+  description: Eun Che Kim seated beside a stone column
+  hidden: false
+- image: /static/images/media-4.jpg
+  credit: Clara Evens
+  description: Portrait of Eun Che Kim
+  hidden: false
+- image: /static/images/media-7.jpg
+  credit: Rira Kim
+  description: Eun Che Kim smiling between stone columns
+  hidden: false

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Media — Eun Che Kim{% endblock %}
+{% block desc %}Videos and photos of violinist Eun Che Kim.{% endblock %}
+{% block main %}
+<main>
+  <div class="page">
+    <h1 class="page-title">Media</h1>
+    {% if videos %}
+    <h2 class="section-title">Videos</h2>
+    <div class="video-grid">
+      {% for v in videos %}
+      {% set label = v.composer ~ (' — ' if v.composer and v.title else '') ~ v.title %}
+      <div class="video"><figure>
+        <div class="video-frame"><button data-id="{{ v.youtube }}" aria-label="Play: {{ label }}"><img src="https://i.ytimg.com/vi/{{ v.youtube }}/hqdefault.jpg" alt="" loading="lazy"></button></div>
+        <figcaption>{% if v.composer and v.title %}<small>{{ v.composer }}</small>{% endif %}{{ v.title or v.composer }}</figcaption>
+      </figure></div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if photos %}
+    <h2 class="section-title">Photos</h2>
+    <div class="photo-grid">
+      {% for p in photos %}
+      <figure><button data-full="{{ p.image | asset }}" data-credit="{{ '© ' ~ p.credit if p.credit }}"><img src="{{ p.image | asset }}" alt="{{ p.description or "Eun Che Kim" }}" loading="lazy"></button>{% if p.credit %}<figcaption class="credit">&copy; {{ p.credit }}</figcaption>{% endif %}</figure>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <img alt="">
+    <button class="lb-close" aria-label="Close">&times;</button>
+    <button class="lb-prev" aria-label="Previous photo">&lsaquo;</button>
+    <button class="lb-next" aria-label="Next photo">&rsaquo;</button>
+    <span class="credit"></span>
+  </div>
+</main>
+{% endblock %}

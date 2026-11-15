@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block head %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Eun Che Kim","alternateName":"김은채",
+"jobTitle":"Violinist","url":"{{ url_for('home', _external=True) }}","email":"mailto:eunchekimvn@gmail.com",
+"sameAs":["https://www.instagram.com/eunchekim/","https://www.youtube.com/@eunchekim"]}
+</script>
+{% endblock %}
+{% block main %}
+<main class="hero">
+  <div class="hero-text">
+    <h1>Eun Che Kim</h1>
+    <p>Violinist</p>
+  </div>
+  <div class="hero-photo">
+    <img src="{{ c.home_photo | asset }}" alt="Eun Che Kim holding her violin" fetchpriority="high">
+    {% if c.home_credit %}<span class="credit">&copy; {{ c.home_credit }}</span>{% endif %}
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,107 @@
+# Pages CMS configuration — the editor at https://app.pagescms.org reads this file.
+media:
+  - name: photos
+    label: Photos
+    input: static/uploads
+    output: /static/uploads
+    rename: safe
+    extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: concerts
+    label: Schedule
+    type: file
+    path: content/concerts.yml
+    format: yaml
+    list: true
+    fields:
+      - name: date
+        label: Date
+        type: date
+        required: true
+        default: ""
+        options:
+          format: yyyy-MM-dd
+      - name: title_en
+        label: Title (English)
+        type: string
+        required: true
+      - name: venue_en
+        label: Venue, City (English)
+        type: string
+      - name: title_ko
+        label: Title (Korean)
+        type: string
+        description: Leave empty to show the English title on the Korean page.
+      - name: venue_ko
+        label: Venue, City (Korean)
+        type: string
+      - name: hidden
+        label: Hide from website
+        type: boolean
+        default: false
+        description: Concerts are sorted by date automatically, and past dates disappear by themselves.
+
+  - name: videos
+    label: Videos
+    type: file
+    path: content/videos.yml
+    format: yaml
+    list: true
+    fields:
+      - name: youtube
+        label: YouTube link
+        type: string
+        required: true
+        description: On YouTube, press Share → Copy, and paste the link here.
+      - name: composer
+        label: Composer (small line)
+        type: string
+      - name: title
+        label: Title
+        type: string
+      - name: hidden
+        label: Hide from website
+        type: boolean
+        default: false
+
+  - name: photos
+    label: Photos
+    type: file
+    path: content/photos.yml
+    format: yaml
+    list: true
+    fields:
+      - name: image
+        label: Photo
+        type: image
+        required: true
+        options:
+          media: photos
+      - name: credit
+        label: Photographer (credit)
+        type: string
+      - name: description
+        label: Short description
+        type: string
+        description: Read aloud by screen readers and helps Google, e.g. "Eun Che Kim on stage".
+      - name: hidden
+        label: Hide from website
+        type: boolean
+        default: false
+
+  - name: settings
+    label: Home page
+    type: file
+    path: content/settings.yml
+    format: yaml
+    fields:
+      - name: home_photo
+        label: Home page photo
+        type: image
+        required: true
+        options:
+          media: photos
+      - name: home_credit
+        label: Photographer (credit)
+        type: string

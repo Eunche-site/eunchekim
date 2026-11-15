@@ -1,0 +1,21 @@
+# Videos on the Media page, shown in this order.
+- youtube: https://youtu.be/T9bv0B3qQRM
+  composer: R. Strauss
+  title: Violin Sonata
+  hidden: false
+- youtube: https://youtu.be/u88KQ0CPYdo
+  composer: J. S. Bach
+  title: Allegro
+  hidden: false
+- youtube: https://youtu.be/kNvj2TfmJTg
+  composer: J. Sibelius
+  title: Violin Concerto
+  hidden: false
+- youtube: https://youtu.be/B9sgjGQ-ztU
+  composer: G. Enescu
+  title: Impromptu Concertant
+  hidden: false
+- youtube: https://youtu.be/poP8fovBxtc
+  composer: ''
+  title: La Gitana
+  hidden: false
