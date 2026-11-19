@@ -7,6 +7,7 @@ Local preview:
     python build.py && python -m http.server -d _site 8000
 """
 import datetime as dt
+import hashlib
 import os
 import re
 import shutil
@@ -34,6 +35,9 @@ def url_for(endpoint, filename=None, _external=False):
     if endpoint == "login":
         return EDITOR_URL
     path = BASE + ("/static/" + filename if endpoint == "static" else "/" + PAGES[endpoint])
+    if endpoint == "static" and filename.startswith("assets/"):
+        # Cache-busting: a new file version gets a new URL, so phones never keep stale CSS/JS
+        path += "?v=" + hashlib.md5((ROOT / "static" / filename).read_bytes()).hexdigest()[:8]
     return SITE_URL + path if _external and SITE_URL else path
 
 
