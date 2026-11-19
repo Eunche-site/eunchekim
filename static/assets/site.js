@@ -100,7 +100,7 @@
       })
         .then(function (r) { return r.json().then(function (j) { if (!r.ok || j.success === "false") throw j; }); })
         .then(function () { form.reset(); status.textContent = "Thank you — your message has been sent."; })
-        .catch(function () { status.textContent = "Sorry, something went wrong. Please email directly at eunchekimvn@gmail.com."; })
+        .catch(function () { status.textContent = "Sorry, something went wrong. Please email directly at infoeunchekim@gmail.com."; })
         .finally(function () { btn.disabled = false; });
     });
   }

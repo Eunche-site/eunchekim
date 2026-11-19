@@ -15,13 +15,13 @@
   credit: Clara Evens
   description: Eun Che Kim with violin against a pale wall
   hidden: false
-- image: /static/images/media-6.jpg
-  credit: Rira Kim
-  description: Eun Che Kim seated beside a stone column
-  hidden: false
 - image: /static/images/media-4.jpg
   credit: Clara Evens
   description: Portrait of Eun Che Kim
+  hidden: false
+- image: /static/images/media-6.jpg
+  credit: Rira Kim
+  description: Eun Che Kim seated beside a stone column
   hidden: false
 - image: /static/images/media-7.jpg
   credit: Rira Kim
