@@ -1,65 +1,64 @@
-# Concert schedule. Order doesn't matter: the site sorts by date and hides past concerts.
-- date: '2026-12-06'
+- date: 2026-12-06
   title_en: Aveu Trio Concert
   venue_en: Palais Lichtenau, Potsdam
   title_ko: Aveu 트리오 콘서트
   venue_ko: 리히테나우 궁전, 포츠담
   hidden: false
-- date: '2026-12-09'
+- date: 2026-12-09
   title_en: Lunch Concert with Aveu Trio
   venue_en: Philharmonie, Berlin
   title_ko: Aveu 트리오 런치 콘서트
   venue_ko: 베를린 필하모니, 베를린
   hidden: false
-- date: '2026-12-13'
+- date: 2026-12-13
   title_en: Aveu Trio Concert
   venue_en: Ev.-luth. Friedenskirche, Hannover
   title_ko: Aveu 트리오 콘서트
   venue_ko: 루터교 평화교회, 하노버
   hidden: false
-- date: '2026-12-30'
+- date: 2026-12-30
   title_en: Chamber Music Concert
   venue_en: Jahnhalle, Gaggenau
   title_ko: 실내악 콘서트
   venue_ko: 얀홀레, 가게나우
   hidden: false
-- date: '2027-01-19'
+- date: 2027-01-19
   title_en: Nakdong Art Center 1st Anniversary Festival
   venue_en: Nakdong Art Center, Busan
   title_ko: 낙동아트센터 개관 1주년 기념 페스티벌
   venue_ko: 낙동아트센터 앙상블극장, 부산
-  hidden: false
-- date: '2027-01-20'
+  hidden: true
+- date: 2027-01-20
   title_en: Nakdong Art Center 1st Anniversary Festival
   venue_en: Nakdong Art Center, Busan
   title_ko: 낙동아트센터 개관 1주년 기념 페스티벌
   venue_ko: 낙동아트센터 앙상블극장, 부산
-  hidden: false
-- date: '2027-01-28'
+  hidden: true
+- date: 2027-01-28
   title_en: Nakdong Art Center 1st Anniversary Festival
   venue_en: Nakdong Art Center, Busan
   title_ko: 낙동아트센터 개관 1주년 기념 페스티벌
   venue_ko: 낙동아트센터 콘서트홀, 부산
-  hidden: false
-- date: '2027-02-06'
+  hidden: true
+- date: 2027-02-06
   title_en: Confringo Piano Quartet Concert
   venue_en: Weinbrennersaal, Baden-Baden
   title_ko: Confringo 피아노 사중주 콘서트
   venue_ko: 바인브레너 홀, 바덴바덴
   hidden: false
-- date: '2027-02-28'
+- date: 2027-02-28
   title_en: Recital with Pianist Mikhail Mordvinov
   venue_en: Sala delle Verifiche – Complesso Monumentale dello Steri, Palermo
   title_ko: 리사이틀 w/ 피아니스트 미카일 모르디노프
   venue_ko: 살라 델레 베리피케, 팔레르모
   hidden: false
-- date: '2027-05-10'
+- date: 2027-05-10
   title_en: Recital with Pianist Viktor Soos
   venue_en: Akademie der Wissenschaften und der Literatur, Mainz
   title_ko: 리사이틀 w/ 피아니스트 빅토르 조스
   venue_ko: 학술과 문학 아카데미, 마인츠
   hidden: false
-- date: '2027-06-13'
+- date: 2027-06-13
   title_en: Chamber Music Concert with Villa Musica
   venue_en: State Representation, Brussels
   title_ko: 빌라 무지카와 함께하는 실내악 콘서트
