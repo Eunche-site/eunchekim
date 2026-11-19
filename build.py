@@ -108,6 +108,11 @@ def main():
         target.write_text(html, encoding="utf-8")
     (OUT / "404.html").write_text(env.get_template("404.html").render(page="notfound"), encoding="utf-8")
     (OUT / ".nojekyll").touch()
+    if SITE_URL:  # help search engines find every page
+        urls = "".join(f"<url><loc>{url_for(p, _external=True)}</loc><lastmod>{today}</lastmod></url>" for p in PAGES)
+        (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
+                                         f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n')
+        (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}{BASE}/sitemap.xml\n")
     print(f"Built {len(context)} pages into {OUT} "
           f"({len(concerts)} upcoming concerts, {len(videos)} videos, {len(photos)} photos)")
 
