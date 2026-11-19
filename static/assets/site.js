@@ -10,12 +10,17 @@
     });
   }
   document.querySelectorAll(".lang-switch button").forEach(function (b) {
-    b.addEventListener("click", function () { setLang(b.dataset.lang); });
+    b.addEventListener("click", function () { setLang(b.dataset.lang); closeMenu(); });
   });
   setLang(root.getAttribute("data-lang") || "en");
 
   // ---- Mobile menu ----
   var toggle = document.querySelector(".menu-toggle");
+  function closeMenu() {
+    if (!toggle) return;
+    document.body.classList.remove("menu-open");
+    toggle.setAttribute("aria-expanded", "false");
+  }
   if (toggle) {
     toggle.addEventListener("click", function () {
       var open = document.body.classList.toggle("menu-open");
