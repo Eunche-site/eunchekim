@@ -9,7 +9,9 @@
 <meta property="og:description" content="{{ self.desc() }}">
 <meta property="og:image" content="{{ url_for('static', filename='images/home-1.jpg', _external=True) }}">
 <meta property="og:type" content="website">
-<link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" sizes="48x48">
+<link rel="icon" href="{{ url_for('static', filename='favicon-192.png') }}" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
@@ -19,7 +21,7 @@
 </head>
 <body class="{{ page }}">
 <header class="site-header">
-  <a class="brand" href="{{ url_for('home') }}">Eun Che Kim</a>
+  <a class="brand" href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='logo.png') }}" alt="" width="66" height="44">Eun Che Kim</a>
   <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
   <nav class="nav" aria-label="Main">
     <ul>
