@@ -93,6 +93,7 @@ def main():
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / "static", OUT / "static", ignore=shutil.ignore_patterns(".gitkeep"))
+    shutil.copy(ROOT / "static" / "favicon.ico", OUT / "favicon.ico")  # crawlers also look at /favicon.ico
 
     context = {
         "home": dict(c=settings),
